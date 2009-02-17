@@ -1,0 +1,2027 @@
+  [4;36;1mSQL (0.000400)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000111)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000126)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000408)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Load (0.000562)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+  [4;35;1mSQL (0.000224)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000112)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000266)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+  [4;36;1mSQL (0.005541)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;35;1mSQL (0.000374)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+  [4;36;1mUser Create (0.000381)[0m   [0;1mINSERT INTO `users` (`salt`, `updated_at`, `crypted_password`, `phone_number`, `remember_token_expires_at`, `lock_version`, `remember_token`, `first_name`, `login`, `last_name`, `email`, `created_at`) VALUES('5835ec40079c993aaa2080849436ad5f1ce9ff6a', '2008-09-27 23:43:10', '5b063c2a025a981c4a9a4882e3e9c2b32277c870', NULL, NULL, 0, NULL, NULL, 'quire', NULL, 'quire@example.com', '2008-09-27 23:43:10')[0m
+  [4;35;1mSQL (0.000240)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+  [4;36;1mSQL (0.009304)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000132)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000367)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000421)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin2' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000251)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Update with optimistic locking (0.000353)[0m   [0m UPDATE `users`
+ SET `login` = 'quentin2', `lock_version` = 1, `updated_at` = '2008-09-27 23:43:10'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;36;1mUser Load (0.000262)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin2') LIMIT 1[0m
+  [4;35;1mSQL (0.013231)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000287)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000432)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Update with optimistic locking (0.000379)[0m   [0;1m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:43:10', `lock_version` = 1, `remember_token` = 'd94e7f49630c02baa0e37aaa3194ad1035d49a88', `updated_at` = '2008-09-27 23:43:10'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;35;1mSQL (0.000776)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000166)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000352)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Update with optimistic locking (0.000826)[0m   [0;1m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-04 23:43:10', `lock_version` = 1, `remember_token` = 'e06ba9f57d385575c2ab87ded78a1689ef488420', `updated_at` = '2008-09-27 23:43:10'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;35;1mSQL (0.000789)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000161)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000393)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Update with optimistic locking (0.000355)[0m   [0;1m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-04 23:43:10', `lock_version` = 1, `remember_token` = 'e06ba9f57d385575c2ab87ded78a1689ef488420', `updated_at` = '2008-09-27 23:43:10'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;35;1mSQL (0.000699)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000158)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000278)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+  [4;36;1mSQL (0.000262)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;35;1mSQL (0.000169)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email IS NULL) [0m
+  [4;36;1mSQL (0.000237)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000134)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000184)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000198)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+  [4;36;1mSQL (0.000173)[0m   [0;1mSELECT `login` FROM `users` WHERE (`users`.login IS NULL) [0m
+  [4;35;1mSQL (0.000150)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000129)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000098)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000095)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000162)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+  [4;36;1mSQL (0.000184)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;35;1mSQL (0.000133)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000146)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000098)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000088)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000168)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+  [4;36;1mSQL (0.000197)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;35;1mSQL (0.000136)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000134)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000097)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000221)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000263)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000197)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Update with optimistic locking (0.000355)[0m   [0;1m UPDATE `users`
+ SET `crypted_password` = '4b6dd603c64f03bc2f676658e287094878df9603', `lock_version` = 1, `updated_at` = '2008-09-27 23:43:10'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;35;1mUser Load (0.000369)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+  [4;36;1mSQL (0.000672)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000084)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000347)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Update with optimistic locking (0.000321)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:43:10', `lock_version` = 1, `remember_token` = 'd94e7f49630c02baa0e37aaa3194ad1035d49a88', `updated_at` = '2008-09-27 23:43:10'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;36;1mSQL (0.000627)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000124)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000293)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Update with optimistic locking (0.000377)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:43:10', `lock_version` = 1, `remember_token` = 'd94e7f49630c02baa0e37aaa3194ad1035d49a88', `updated_at` = '2008-09-27 23:43:10'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;36;1mUser Update with optimistic locking (0.000275)[0m   [0;1m UPDATE `users`
+ SET `remember_token_expires_at` = NULL, `lock_version` = 2, `remember_token` = NULL, `updated_at` = '2008-09-27 23:43:10'
+ WHERE id = 1
+ AND `lock_version` = 1
+[0m
+  [4;35;1mSQL (0.001085)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000359)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000104)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000063)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000275)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2008-09-27 18:43:12) [GET]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+  [4;36;1mUser Load (0.000328)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://test.host/
+Completed in 0.00887 (112 reqs/sec) | DB: 0.00926 (104%) | 302 Found [http://test.host/logout]
+  [4;35;1mSQL (0.000179)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000084)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000300)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Update with optimistic locking (0.000344)[0m   [0;1m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:43:12', `lock_version` = 1, `remember_token` = 'f5b07eeb29e15647aa5fb730a87cfcf79524dd14', `updated_at` = '2008-09-27 23:43:12'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2008-09-27 18:43:12) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+  [4;35;1mUser Load (0.000302)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = 'invalid_auth_token') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_nav (0.00001)
+Rendered shared/_flash_messages (0.00004)
+Rendered shared/_sidebar (0.00001)
+Completed in 0.00758 (131 reqs/sec) | Rendering: 0.00643 (84%) | DB: 0.00121 (15%) | 200 OK [http://test.host/login]
+  [4;36;1mUser Load (0.000327)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = 'invalid_auth_token') LIMIT 1[0m
+  [4;35;1mSQL (0.000712)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000251)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Update with optimistic locking (0.000589)[0m   [0;1m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:43:12', `lock_version` = 1, `remember_token` = 'f5b07eeb29e15647aa5fb730a87cfcf79524dd14', `updated_at` = '2008-09-27 23:43:12'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;35;1mUser Update with optimistic locking (0.000289)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-09-27 23:38:12', `lock_version` = 2, `updated_at` = '2008-09-27 23:43:12'
+ WHERE id = 1
+ AND `lock_version` = 1
+[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2008-09-27 18:43:12) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+  [4;36;1mUser Load (0.000284)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = 'f5b07eeb29e15647aa5fb730a87cfcf79524dd14') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_nav (0.00001)
+Rendered shared/_flash_messages (0.00004)
+Rendered shared/_sidebar (0.00001)
+Completed in 0.00290 (344 reqs/sec) | Rendering: 0.00181 (62%) | DB: 0.00257 (88%) | 200 OK [http://test.host/login]
+  [4;35;1mUser Load (0.000320)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = 'f5b07eeb29e15647aa5fb730a87cfcf79524dd14') LIMIT 1[0m
+  [4;36;1mSQL (0.000805)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000165)[0m   [0mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-09-27 18:43:12) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (0.000373)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_nav (0.00002)
+Rendered shared/_flash_messages (0.00006)
+Rendered shared/_sidebar (0.00002)
+Completed in 0.00429 (233 reqs/sec) | Rendering: 0.00271 (63%) | DB: 0.00166 (38%) | 200 OK [http://test.host/session?login=quentin&password=bad+password]
+  [4;35;1mSQL (0.000217)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000441)[0m   [0;1mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-09-27 18:43:12) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"[FILTERED]"}
+  [4;35;1mUser Load (0.000381)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00164 (608 reqs/sec) | DB: 0.00104 (63%) | 302 Found [http://test.host/session?login=quentin&password=test]
+  [4;36;1mSQL (0.000158)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000106)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000317)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Update with optimistic locking (0.000449)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:43:12', `lock_version` = 1, `remember_token` = 'f5b07eeb29e15647aa5fb730a87cfcf79524dd14', `updated_at` = '2008-09-27 23:43:12'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2008-09-27 18:43:12) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+  [4;36;1mUser Load (0.000410)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = 'f5b07eeb29e15647aa5fb730a87cfcf79524dd14') LIMIT 1[0m
+Cookie set: auth_token=f5b07eeb29e15647aa5fb730a87cfcf79524dd14; path=/; expires=Sat, 11 Oct 2008 23:43:12 GMT
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_nav (0.00002)
+Rendered shared/_flash_messages (0.00005)
+Rendered shared/_sidebar (0.00001)
+Completed in 0.00419 (238 reqs/sec) | Rendering: 0.00239 (57%) | DB: 0.00144 (34%) | 200 OK [http://test.host/login]
+  [4;35;1mSQL (0.001342)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000159)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000365)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2008-09-27 18:43:12) [GET]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+  [4;36;1mUser Load (0.000312)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://test.host/
+Completed in 0.00306 (326 reqs/sec) | DB: 0.00218 (71%) | 302 Found [http://test.host/logout]
+  [4;35;1mSQL (0.000170)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-09-27 18:43:12) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"[FILTERED]", "remember_me"=>"0"}
+  [4;35;1mUser Load (0.000349)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00118 (844 reqs/sec) | DB: 0.00060 (50%) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=0]
+  [4;36;1mSQL (0.000122)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000081)[0m   [0mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-09-27 18:43:12) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"[FILTERED]", "remember_me"=>"1"}
+  [4;36;1mUser Load (0.000300)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+  [4;35;1mUser Update with optimistic locking (0.000339)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:43:12', `lock_version` = 1, `remember_token` = 'f5b07eeb29e15647aa5fb730a87cfcf79524dd14', `updated_at` = '2008-09-27 23:43:12'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+Cookie set: auth_token=f5b07eeb29e15647aa5fb730a87cfcf79524dd14; path=/; expires=Sat, 11 Oct 2008 23:43:12 GMT
+Redirected to http://test.host/
+Completed in 0.00419 (238 reqs/sec) | DB: 0.00084 (20%) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=1]
+  [4;36;1mSQL (0.000828)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000154)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000259)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-09-27 18:43:12) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"quire", "password"=>"[FILTERED]", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0.00047 (2105 reqs/sec) | DB: 0.00124 (261%) | 302 Found [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000271)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+  [4;36;1mSQL (0.000139)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000097)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000192)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-09-27 18:43:12) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"quire", "password"=>"[FILTERED]", "email"=>nil}, "action"=>"create", "controller"=>"users"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0.00052 (1926 reqs/sec) | DB: 0.00070 (134%) | 302 Found [http://test.host/users?user%5Bemail%5D=&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000142)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000084)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000206)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-09-27 18:43:12) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "login"=>nil, "password"=>"[FILTERED]", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0.00046 (2192 reqs/sec) | DB: 0.00043 (94%) | 302 Found [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;36;1mSQL (0.000143)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000109)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000219)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-09-27 18:43:12) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"quire", "password"=>"[FILTERED]", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0.00046 (2178 reqs/sec) | DB: 0.00047 (102%) | 302 Found [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=]
+  [4;35;1mSQL (0.000149)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000084)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000197)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-09-27 18:43:12) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"quire", "password"=>"[FILTERED]", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0.00069 (1444 reqs/sec) | DB: 0.00043 (62%) | 302 Found [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=&user%5Bpassword_confirmation%5D=quire]
+  [4;36;1mSQL (0.000174)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000412)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000097)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000172)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000192)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000173)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000114)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000122)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000109)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000124)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000105)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000119)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000105)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000119)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000104)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000117)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000105)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000117)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000104)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000119)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000107)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000119)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000104)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000118)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000104)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000134)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000133)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000131)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000118)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000105)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Load (0.000367)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mUser Load (0.000404)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000457)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000199)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000200)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000218)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000171)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000219)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;35;1mItem Load (0.000229)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mSQL (0.000119)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000078)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000082)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000088)[0m   [0mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;36;1mUser Load (0.000293)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000297)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000179)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000115)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;35;1mUser Load (0.000297)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000253)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000175)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000110)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000099)[0m   [0mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;36;1mUser Load (0.000276)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000241)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000223)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000115)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000076)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Load (0.000238)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mUser Load (0.000281)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000257)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000181)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000297)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000254)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000178)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000169)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;35;1mItem Load (0.000167)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mSQL (0.000117)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000077)[0m   [0mBEGIN[0m
+  [4;36;1mItem Load (0.000223)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mUser Load (0.000221)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000283)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000244)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000236)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000268)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000177)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000172)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;36;1mItem Load (0.000167)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mSQL (0.000118)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;35;1mUser Load (0.000276)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000313)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000210)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000098)[0m   [0mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;36;1mUser Load (0.000320)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000291)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000182)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000136)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000076)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000081)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000090)[0m   [0;1mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;35;1mUser Load (0.000283)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000330)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000191)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000122)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000075)[0m   [0mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;36;1mUser Load (0.000277)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000258)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000182)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000112)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000076)[0m   [0;1mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;35;1mUser Load (0.000281)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000278)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000187)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000112)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000076)[0m   [0mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;36;1mUser Load (0.000279)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000306)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000182)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000111)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000076)[0m   [0;1mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;35;1mSQL (0.000117)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000075)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000079)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000088)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000077)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000088)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Load (0.000264)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mUser Load (0.000237)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000270)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000189)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000178)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000203)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000168)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000166)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;35;1mItem Load (0.000164)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mSQL (0.000144)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000077)[0m   [0mBEGIN[0m
+  [4;36;1mItem Load (0.000309)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mItem Load (0.000182)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mItem Load (0.000155)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mUser Load (0.000205)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000255)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000174)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000176)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000201)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000167)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000162)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;36;1mItem Load (0.000162)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mItem Update with optimistic locking (0.000310)[0m   [0m UPDATE `items`
+ SET `extra_fields` = NULL, `lock_version` = 1, `updated_at` = '2008-09-27 23:51:04', `name` = 'Some arbitrary string which is unlikely to ever be the name of a fixture'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;36;1mUser Load (0.000228)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000339)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000233)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000198)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000218)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000182)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000163)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;35;1mItem Load (0.000163)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mItem Update with optimistic locking (0.000266)[0m   [0;1m UPDATE `items`
+ SET `extra_fields` = NULL, `lock_version` = 1, `updated_at` = '2008-09-27 23:51:04', `name` = 'Some other arbitrary string which is unlikely to ever be the name of a fixture'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;35;1mSQL (0.001372)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000195)[0m   [0;1mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, requester_id
+  [4;35;1mUser Load (0.000323)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.000145)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000106)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000097)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000082)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000075)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000084)[0m   [0mBEGIN[0m
+  [4;36;1mItem Load (0.000237)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mUser Load (0.000221)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000274)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000183)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000175)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000202)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000173)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000216)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;36;1mItem Load (0.000196)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mSQL (0.000121)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000081)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Load (0.000230)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mUser Load (0.000238)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000262)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000176)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000393)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000312)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000188)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000229)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;35;1mItem Load (0.000192)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mSQL (0.000140)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000078)[0m   [0mBEGIN[0m
+  [4;36;1mItem Load (0.000255)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mUser Load (0.000193)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000327)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000190)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000189)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000217)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000176)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000171)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;36;1mItem Load (0.000169)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mSQL (0.000115)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000080)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Load (0.000273)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mUser Load (0.000211)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000279)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000183)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000182)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000226)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000186)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000175)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;35;1mItem Load (0.000167)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000076)[0m   [0mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;36;1mUser Load (0.000305)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000299)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000184)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000123)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000095)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000076)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000084)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Columns (0.002981)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mItem Load (0.000421)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 3) [0m
+  [4;35;1mPost Create (0.000417)[0m   [0mINSERT INTO `posts` (`item_id`, `updated_at`, `emailed_to`, `type`, `content`, `user_id`, `emailed_cc`, `created_at`) VALUES(3, '2008-09-27 23:51:05', NULL, NULL, '<p>Il parlar auxiliar ascoltar uso, ille addresses del in, tu pro nomina latente anteriormente. Sitos conferentias non da. Es uno prime deler linguistas, da sine personas auxiliar uno, laborava summarios nos un. In spatios medical publicate per, pan su anque auxiliary anteriormente. In pan proposito sanctificate, duo moderne ascoltar secundarimente un. Qui libere denomination in.\n<br /> Titulo giuseppe primarimente ma uso, libro continentes via se. Inviar nostre linguas de via. Es ille brevissime methodicamente sed, sia un quales romanic paternoster. De per medio africa tamben.</p>', 1, NULL, '2008-09-27 23:51:05')[0m
+  [4;36;1mUser Load (0.000337)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000359)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000243)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000243)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;36;1mItem Load (0.000286)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 3) [0m
+  [4;35;1mItem Update with optimistic locking (0.000283)[0m   [0m UPDATE `items`
+ SET `extra_fields` = NULL, `lock_version` = 1, `updated_at` = '2008-09-27 23:51:05'
+ WHERE id = 3
+ AND `lock_version` = 0
+[0m
+  [4;36;1mSQL (0.000884)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000111)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000313)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Load (0.000237)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000078)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000195)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000215)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;36;1mSQL (0.000135)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+  [4;35;1mUser Create (0.000353)[0m   [0mINSERT INTO `users` (`salt`, `updated_at`, `crypted_password`, `phone_number`, `remember_token_expires_at`, `lock_version`, `remember_token`, `first_name`, `login`, `last_name`, `email`, `created_at`) VALUES('da12392294e27ddc1092a89ad6810dffb0042122', '2008-09-27 23:51:05', '2c93689ec52d506fc14e99b33158f306066f76b6', NULL, NULL, 0, NULL, NULL, 'quire', NULL, 'quire@example.com', '2008-09-27 23:51:05')[0m
+  [4;36;1mSQL (0.000221)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000588)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000084)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000254)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000277)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin2' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000178)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Update with optimistic locking (0.000285)[0m   [0;1m UPDATE `users`
+ SET `login` = 'quentin2', `lock_version` = 1, `updated_at` = '2008-09-27 23:51:05'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;35;1mUser Load (0.000201)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin2') LIMIT 1[0m
+  [4;36;1mSQL (0.000747)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000164)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000376)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Update with optimistic locking (0.000389)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:51:05', `lock_version` = 1, `remember_token` = '762edd3d77a8a8bc6fa66f0cddd488221d7cad9b', `updated_at` = '2008-09-27 23:51:05'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;36;1mSQL (0.001321)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000192)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000353)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Update with optimistic locking (0.000371)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-04 23:51:05', `lock_version` = 1, `remember_token` = '0dffb66ad1ed3ba4bca8b6de6fc0b72016568425', `updated_at` = '2008-09-27 23:51:05'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;36;1mSQL (0.000766)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000165)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000387)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Update with optimistic locking (0.000365)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-04 23:51:05', `lock_version` = 1, `remember_token` = '0dffb66ad1ed3ba4bca8b6de6fc0b72016568425', `updated_at` = '2008-09-27 23:51:05'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;36;1mSQL (0.000792)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000175)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000261)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000301)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;36;1mSQL (0.000184)[0m   [0;1mSELECT `email` FROM `users` WHERE (`users`.email IS NULL) [0m
+  [4;35;1mSQL (0.000182)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+  [4;36;1mSQL (0.000140)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000108)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000207)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000236)[0m   [0mSELECT `login` FROM `users` WHERE (`users`.login IS NULL) [0m
+  [4;36;1mSQL (0.000155)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000145)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+  [4;36;1mSQL (0.000106)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000089)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000163)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000199)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;36;1mSQL (0.000144)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000147)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+  [4;36;1mSQL (0.000100)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000079)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000163)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000222)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;36;1mSQL (0.000156)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000148)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+  [4;36;1mSQL (0.000099)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000076)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000234)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000257)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000209)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Update with optimistic locking (0.000243)[0m   [0m UPDATE `users`
+ SET `crypted_password` = '4b6dd603c64f03bc2f676658e287094878df9603', `lock_version` = 1, `updated_at` = '2008-09-27 23:51:05'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;36;1mUser Load (0.000206)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+  [4;35;1mSQL (0.000676)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000160)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000311)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Update with optimistic locking (0.000389)[0m   [0;1m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:51:05', `lock_version` = 1, `remember_token` = '762edd3d77a8a8bc6fa66f0cddd488221d7cad9b', `updated_at` = '2008-09-27 23:51:05'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;35;1mSQL (0.000782)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000161)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000323)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Update with optimistic locking (0.000410)[0m   [0;1m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:51:05', `lock_version` = 1, `remember_token` = '762edd3d77a8a8bc6fa66f0cddd488221d7cad9b', `updated_at` = '2008-09-27 23:51:05'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;35;1mUser Update with optimistic locking (0.000321)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = NULL, `lock_version` = 2, `remember_token` = NULL, `updated_at` = '2008-09-27 23:51:05'
+ WHERE id = 1
+ AND `lock_version` = 1
+[0m
+  [4;36;1mSQL (0.001126)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000295)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000096)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000109)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000629)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2008-09-27 18:51:07) [GET]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+  [4;36;1mUser Load (0.000372)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://test.host/
+Completed in 0.01220 (81 reqs/sec) | DB: 0.01583 (129%) | 302 Found [http://test.host/logout]
+  [4;35;1mSQL (0.000195)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000137)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000291)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Update with optimistic locking (0.000337)[0m   [0;1m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:51:07', `lock_version` = 1, `remember_token` = '53c23c301c47059980334afc66871f41ff4d2ee9', `updated_at` = '2008-09-27 23:51:07'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2008-09-27 18:51:07) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+  [4;35;1mUser Load (0.000311)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = 'invalid_auth_token') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_nav (0.00001)
+Rendered shared/_flash_messages (0.00004)
+Rendered shared/_sidebar (0.00001)
+Completed in 0.00745 (134 reqs/sec) | Rendering: 0.00638 (85%) | DB: 0.00127 (17%) | 200 OK [http://test.host/login]
+  [4;36;1mUser Load (0.000332)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = 'invalid_auth_token') LIMIT 1[0m
+  [4;35;1mSQL (0.000878)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000165)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000328)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Update with optimistic locking (0.000394)[0m   [0;1m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:51:07', `lock_version` = 1, `remember_token` = '53c23c301c47059980334afc66871f41ff4d2ee9', `updated_at` = '2008-09-27 23:51:07'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;35;1mUser Update with optimistic locking (0.000357)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-09-27 23:46:07', `lock_version` = 2, `updated_at` = '2008-09-27 23:51:07'
+ WHERE id = 1
+ AND `lock_version` = 1
+[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2008-09-27 18:51:07) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+  [4;36;1mUser Load (0.000340)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = '53c23c301c47059980334afc66871f41ff4d2ee9') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_nav (0.00002)
+Rendered shared/_flash_messages (0.00005)
+Rendered shared/_sidebar (0.00002)
+Completed in 0.00393 (254 reqs/sec) | Rendering: 0.00244 (62%) | DB: 0.00279 (71%) | 200 OK [http://test.host/login]
+  [4;35;1mUser Load (0.000325)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = '53c23c301c47059980334afc66871f41ff4d2ee9') LIMIT 1[0m
+  [4;36;1mSQL (0.000821)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000169)[0m   [0mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-09-27 18:51:07) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (0.000449)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_nav (0.00002)
+Rendered shared/_flash_messages (0.00005)
+Rendered shared/_sidebar (0.00002)
+Completed in 0.00423 (236 reqs/sec) | Rendering: 0.00258 (60%) | DB: 0.00176 (41%) | 200 OK [http://test.host/session?login=quentin&password=bad+password]
+  [4;35;1mSQL (0.000190)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000109)[0m   [0;1mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-09-27 18:51:07) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"[FILTERED]"}
+  [4;35;1mUser Load (0.000361)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00142 (702 reqs/sec) | DB: 0.00066 (46%) | 302 Found [http://test.host/session?login=quentin&password=test]
+  [4;36;1mSQL (0.000161)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000109)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000304)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Update with optimistic locking (0.000398)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:51:07', `lock_version` = 1, `remember_token` = '53c23c301c47059980334afc66871f41ff4d2ee9', `updated_at` = '2008-09-27 23:51:07'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2008-09-27 18:51:07) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+  [4;36;1mUser Load (0.000363)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = '53c23c301c47059980334afc66871f41ff4d2ee9') LIMIT 1[0m
+Cookie set: auth_token=53c23c301c47059980334afc66871f41ff4d2ee9; path=/; expires=Sat, 11 Oct 2008 23:51:07 GMT
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_nav (0.00002)
+Rendered shared/_flash_messages (0.00005)
+Rendered shared/_sidebar (0.00002)
+Completed in 0.00425 (235 reqs/sec) | Rendering: 0.00254 (59%) | DB: 0.00133 (31%) | 200 OK [http://test.host/login]
+  [4;35;1mSQL (0.000919)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000175)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000353)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2008-09-27 18:51:07) [GET]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+  [4;36;1mUser Load (0.000302)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://test.host/
+Completed in 0.00297 (336 reqs/sec) | DB: 0.00175 (58%) | 302 Found [http://test.host/logout]
+  [4;35;1mSQL (0.000166)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-09-27 18:51:07) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"[FILTERED]", "remember_me"=>"0"}
+  [4;35;1mUser Load (0.000302)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00109 (917 reqs/sec) | DB: 0.00055 (50%) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=0]
+  [4;36;1mSQL (0.000132)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000082)[0m   [0mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-09-27 18:51:07) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"[FILTERED]", "remember_me"=>"1"}
+  [4;36;1mUser Load (0.000321)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+  [4;35;1mUser Update with optimistic locking (0.000341)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:51:07', `lock_version` = 1, `remember_token` = '53c23c301c47059980334afc66871f41ff4d2ee9', `updated_at` = '2008-09-27 23:51:07'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+Cookie set: auth_token=53c23c301c47059980334afc66871f41ff4d2ee9; path=/; expires=Sat, 11 Oct 2008 23:51:07 GMT
+Redirected to http://test.host/
+Completed in 0.00429 (232 reqs/sec) | DB: 0.00088 (20%) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=1]
+  [4;36;1mSQL (0.001138)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000358)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000289)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-09-27 18:51:07) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"quire", "password"=>"[FILTERED]", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0.00066 (1519 reqs/sec) | DB: 0.00179 (271%) | 302 Found [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000328)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+  [4;36;1mSQL (0.000154)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000106)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000216)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-09-27 18:51:07) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"quire", "password"=>"[FILTERED]", "email"=>nil}, "action"=>"create", "controller"=>"users"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0.00062 (1613 reqs/sec) | DB: 0.00080 (129%) | 302 Found [http://test.host/users?user%5Bemail%5D=&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000180)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000111)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000195)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-09-27 18:51:07) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "login"=>nil, "password"=>"[FILTERED]", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0.00045 (2222 reqs/sec) | DB: 0.00049 (108%) | 302 Found [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;36;1mSQL (0.000142)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000080)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000191)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-09-27 18:51:07) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"quire", "password"=>"[FILTERED]", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0.00054 (1855 reqs/sec) | DB: 0.00041 (76%) | 302 Found [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=]
+  [4;35;1mSQL (0.000162)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000083)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000209)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-09-27 18:51:07) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"quire", "password"=>"[FILTERED]", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0.00050 (2003 reqs/sec) | DB: 0.00045 (90%) | 302 Found [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=&user%5Bpassword_confirmation%5D=quire]
+  [4;36;1mSQL (0.000162)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000358)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000109)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000230)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000122)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000151)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000110)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000105)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000124)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000105)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000119)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000105)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000119)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000107)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000104)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000118)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000104)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000122)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000117)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000123)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000105)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000151)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000109)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000114)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000105)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000119)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000104)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000105)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Load (0.000368)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mUser Load (0.000467)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000487)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000273)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000211)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000224)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000170)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000188)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;35;1mItem Load (0.000191)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mSQL (0.000117)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000096)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000093)[0m   [0mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;36;1mUser Load (0.000302)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000259)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000174)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000131)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000098)[0m   [0;1mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;35;1mUser Load (0.000295)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000250)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000172)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000113)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000076)[0m   [0mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;36;1mUser Load (0.000279)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000262)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000176)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000128)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000098)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Load (0.000243)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mUser Load (0.000214)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000252)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000177)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000177)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000221)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000178)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000169)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;35;1mItem Load (0.000176)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mSQL (0.000112)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000135)[0m   [0mBEGIN[0m
+  [4;36;1mItem Load (0.000269)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mUser Load (0.000254)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000258)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000176)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000195)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000316)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000316)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000242)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;36;1mItem Load (0.000188)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mSQL (0.000116)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000135)[0m   [0;1mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;35;1mUser Load (0.000407)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000337)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000210)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000123)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000079)[0m   [0mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;36;1mUser Load (0.000281)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000273)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000176)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000130)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000098)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000083)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000099)[0m   [0;1mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;35;1mUser Load (0.000288)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000253)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000179)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000114)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000077)[0m   [0mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;36;1mUser Load (0.000269)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000268)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000214)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000123)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000074)[0m   [0;1mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;35;1mUser Load (0.000283)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000251)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000197)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000079)[0m   [0mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;36;1mUser Load (0.000346)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000349)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000208)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000181)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000136)[0m   [0;1mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;35;1mSQL (0.000155)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000112)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000145)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000088)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000077)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000091)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Load (0.000301)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mUser Load (0.000201)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000267)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000192)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000207)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000215)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000174)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000175)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;35;1mItem Load (0.000166)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000077)[0m   [0mBEGIN[0m
+  [4;36;1mItem Load (0.000228)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mItem Load (0.000153)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mItem Load (0.000166)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mUser Load (0.000187)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000271)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000181)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000208)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000276)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000192)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000184)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;36;1mItem Load (0.000175)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mItem Update with optimistic locking (0.000300)[0m   [0m UPDATE `items`
+ SET `extra_fields` = NULL, `lock_version` = 1, `updated_at` = '2008-09-27 23:55:44', `name` = 'Some arbitrary string which is unlikely to ever be the name of a fixture'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;36;1mUser Load (0.000236)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000250)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000185)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000199)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000213)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000182)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000169)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;35;1mItem Load (0.000270)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mItem Update with optimistic locking (0.000333)[0m   [0;1m UPDATE `items`
+ SET `extra_fields` = NULL, `lock_version` = 1, `updated_at` = '2008-09-27 23:55:44', `name` = 'Some other arbitrary string which is unlikely to ever be the name of a fixture'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;35;1mSQL (0.001712)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000177)[0m   [0;1mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, requester_id
+  [4;35;1mUser Load (0.000345)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.000148)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000129)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000123)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000138)[0m   [0mBEGIN[0m
+  [4;36;1mItem Load (0.000332)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mUser Load (0.000284)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000482)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000282)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000349)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000306)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000254)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000378)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;36;1mItem Load (0.000250)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mSQL (0.000176)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000100)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Load (0.000281)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mUser Load (0.000217)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000261)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000208)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000178)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000567)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000219)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000220)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;35;1mItem Load (0.000192)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mSQL (0.000156)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000111)[0m   [0mBEGIN[0m
+  [4;36;1mItem Load (0.000255)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mUser Load (0.000213)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000294)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000236)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000189)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000223)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000200)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000179)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;36;1mItem Load (0.000201)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mSQL (0.000125)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000091)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Load (0.000239)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mUser Load (0.000190)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000285)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000187)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000195)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000226)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000177)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000177)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;35;1mItem Load (0.000172)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mSQL (0.000113)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000181)[0m   [0mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;36;1mUser Load (0.000307)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000338)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000186)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000129)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000097)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000078)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000088)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Columns (0.002850)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mItem Load (0.000398)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 3) [0m
+  [4;35;1mPost Create (0.000428)[0m   [0mINSERT INTO `posts` (`item_id`, `updated_at`, `emailed_to`, `type`, `content`, `user_id`, `emailed_cc`, `created_at`) VALUES(3, '2008-09-27 23:55:44', NULL, NULL, '<p>Il parlar auxiliar ascoltar uso, ille addresses del in, tu pro nomina latente anteriormente. Sitos conferentias non da. Es uno prime deler linguistas, da sine personas auxiliar uno, laborava summarios nos un. In spatios medical publicate per, pan su anque auxiliary anteriormente. In pan proposito sanctificate, duo moderne ascoltar secundarimente un. Qui libere denomination in.\n<br /> Titulo giuseppe primarimente ma uso, libro continentes via se. Inviar nostre linguas de via. Es ille brevissime methodicamente sed, sia un quales romanic paternoster. De per medio africa tamben.</p>', 1, NULL, '2008-09-27 23:55:44')[0m
+  [4;36;1mUser Load (0.000352)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000466)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000304)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000272)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;36;1mItem Load (0.000220)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 3) [0m
+  [4;35;1mItem Update with optimistic locking (0.000267)[0m   [0m UPDATE `items`
+ SET `extra_fields` = NULL, `lock_version` = 1, `updated_at` = '2008-09-27 23:55:44'
+ WHERE id = 3
+ AND `lock_version` = 0
+[0m
+  [4;36;1mSQL (0.000775)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000202)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000339)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Load (0.000269)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+  [4;36;1mSQL (0.000150)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000260)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000265)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000266)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;36;1mSQL (0.000183)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+  [4;35;1mUser Create (0.000254)[0m   [0mINSERT INTO `users` (`salt`, `updated_at`, `crypted_password`, `phone_number`, `remember_token_expires_at`, `lock_version`, `remember_token`, `first_name`, `login`, `last_name`, `email`, `created_at`) VALUES('16d853e9b36efa468ba6096213cbc8177321b6ea', '2008-09-27 23:55:44', '6780767daa39515a9d9ec0ba0c4368c9319dea69', NULL, NULL, 0, NULL, NULL, 'quire', NULL, 'quire@example.com', '2008-09-27 23:55:44')[0m
+  [4;36;1mSQL (0.000190)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000687)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000127)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000319)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000396)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin2' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000292)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Update with optimistic locking (0.000339)[0m   [0;1m UPDATE `users`
+ SET `login` = 'quentin2', `lock_version` = 1, `updated_at` = '2008-09-27 23:55:44'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;35;1mUser Load (0.000279)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin2') LIMIT 1[0m
+  [4;36;1mSQL (0.000703)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000122)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000386)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Update with optimistic locking (0.000372)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:55:44', `lock_version` = 1, `remember_token` = 'a4501e36b67aa3da6db20b897abd2dac8ac50896', `updated_at` = '2008-09-27 23:55:44'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;36;1mSQL (0.000749)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000161)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000360)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Update with optimistic locking (0.000429)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-04 23:55:44', `lock_version` = 1, `remember_token` = 'fd68148f1d6869e3dc076c1bcc948ac1a4b87731', `updated_at` = '2008-09-27 23:55:44'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;36;1mSQL (0.000800)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000099)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000367)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Update with optimistic locking (0.000491)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-04 23:55:44', `lock_version` = 1, `remember_token` = 'fd68148f1d6869e3dc076c1bcc948ac1a4b87731', `updated_at` = '2008-09-27 23:55:44'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;36;1mSQL (0.001100)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000149)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000295)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000233)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;36;1mSQL (0.000129)[0m   [0;1mSELECT `email` FROM `users` WHERE (`users`.email IS NULL) [0m
+  [4;35;1mSQL (0.000138)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+  [4;36;1mSQL (0.000101)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000083)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000172)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000175)[0m   [0mSELECT `login` FROM `users` WHERE (`users`.login IS NULL) [0m
+  [4;36;1mSQL (0.000155)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000185)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+  [4;36;1mSQL (0.000094)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000081)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000171)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000229)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;36;1mSQL (0.000158)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000158)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+  [4;36;1mSQL (0.000101)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000075)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000159)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000194)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;36;1mSQL (0.000135)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000151)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+  [4;36;1mSQL (0.000098)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000089)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000233)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000281)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000188)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Update with optimistic locking (0.000269)[0m   [0m UPDATE `users`
+ SET `crypted_password` = '4b6dd603c64f03bc2f676658e287094878df9603', `lock_version` = 1, `updated_at` = '2008-09-27 23:55:44'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;36;1mUser Load (0.000207)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+  [4;35;1mSQL (0.000718)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000083)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000237)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Update with optimistic locking (0.000320)[0m   [0;1m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:55:44', `lock_version` = 1, `remember_token` = 'a4501e36b67aa3da6db20b897abd2dac8ac50896', `updated_at` = '2008-09-27 23:55:44'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;35;1mSQL (0.000734)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000160)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000490)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Update with optimistic locking (0.000484)[0m   [0;1m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:55:44', `lock_version` = 1, `remember_token` = 'a4501e36b67aa3da6db20b897abd2dac8ac50896', `updated_at` = '2008-09-27 23:55:44'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;35;1mUser Update with optimistic locking (0.000341)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = NULL, `lock_version` = 2, `remember_token` = NULL, `updated_at` = '2008-09-27 23:55:44'
+ WHERE id = 1
+ AND `lock_version` = 1
+[0m
+  [4;36;1mSQL (0.000844)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000700)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000122)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000140)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000600)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2008-09-27 18:55:47) [GET]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+  [4;36;1mUser Load (0.000350)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://test.host/
+Completed in 0.01043 (95 reqs/sec) | DB: 0.01583 (151%) | 302 Found [http://test.host/logout]
+  [4;35;1mSQL (0.000214)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000087)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000291)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Update with optimistic locking (0.000434)[0m   [0;1m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:55:47', `lock_version` = 1, `remember_token` = '05178b923a3da8360b25d6b50298857a64dfe486', `updated_at` = '2008-09-27 23:55:47'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2008-09-27 18:55:47) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+  [4;35;1mUser Load (0.000347)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = 'invalid_auth_token') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_nav (0.00001)
+Rendered shared/_flash_messages (0.00004)
+Rendered shared/_sidebar (0.00001)
+Completed in 0.00766 (130 reqs/sec) | Rendering: 0.00647 (84%) | DB: 0.00137 (17%) | 200 OK [http://test.host/login]
+  [4;36;1mUser Load (0.000327)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = 'invalid_auth_token') LIMIT 1[0m
+  [4;35;1mSQL (0.000820)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000091)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000260)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Update with optimistic locking (0.000318)[0m   [0;1m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:55:47', `lock_version` = 1, `remember_token` = '05178b923a3da8360b25d6b50298857a64dfe486', `updated_at` = '2008-09-27 23:55:47'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;35;1mUser Update with optimistic locking (0.000286)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-09-27 23:50:47', `lock_version` = 2, `updated_at` = '2008-09-27 23:55:47'
+ WHERE id = 1
+ AND `lock_version` = 1
+[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2008-09-27 18:55:47) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+  [4;36;1mUser Load (0.000287)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = '05178b923a3da8360b25d6b50298857a64dfe486') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_nav (0.00001)
+Rendered shared/_flash_messages (0.00004)
+Rendered shared/_sidebar (0.00001)
+Completed in 0.00289 (346 reqs/sec) | Rendering: 0.00180 (62%) | DB: 0.00239 (82%) | 200 OK [http://test.host/login]
+  [4;35;1mUser Load (0.000349)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = '05178b923a3da8360b25d6b50298857a64dfe486') LIMIT 1[0m
+  [4;36;1mSQL (0.000820)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000089)[0m   [0mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-09-27 18:55:47) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (0.000319)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_nav (0.00001)
+Rendered shared/_flash_messages (0.00004)
+Rendered shared/_sidebar (0.00001)
+Completed in 0.00305 (327 reqs/sec) | Rendering: 0.00186 (60%) | DB: 0.00158 (51%) | 200 OK [http://test.host/session?login=quentin&password=bad+password]
+  [4;35;1mSQL (0.000194)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000081)[0m   [0;1mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-09-27 18:55:47) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"[FILTERED]"}
+  [4;35;1mUser Load (0.000365)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00150 (664 reqs/sec) | DB: 0.00064 (42%) | 302 Found [http://test.host/session?login=quentin&password=test]
+  [4;36;1mSQL (0.000151)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000079)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000274)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Update with optimistic locking (0.000363)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:55:47', `lock_version` = 1, `remember_token` = '05178b923a3da8360b25d6b50298857a64dfe486', `updated_at` = '2008-09-27 23:55:47'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2008-09-27 18:55:47) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+  [4;36;1mUser Load (0.000333)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = '05178b923a3da8360b25d6b50298857a64dfe486') LIMIT 1[0m
+Cookie set: auth_token=05178b923a3da8360b25d6b50298857a64dfe486; path=/; expires=Sat, 11 Oct 2008 23:55:47 GMT
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_nav (0.00001)
+Rendered shared/_flash_messages (0.00004)
+Rendered shared/_sidebar (0.00001)
+Completed in 0.00306 (326 reqs/sec) | Rendering: 0.00176 (57%) | DB: 0.00120 (39%) | 200 OK [http://test.host/login]
+  [4;35;1mSQL (0.000827)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000168)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000464)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2008-09-27 18:55:47) [GET]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+  [4;36;1mUser Load (0.000459)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://test.host/
+Completed in 0.00393 (254 reqs/sec) | DB: 0.00192 (48%) | 302 Found [http://test.host/logout]
+  [4;35;1mSQL (0.000193)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000109)[0m   [0;1mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-09-27 18:55:47) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"[FILTERED]", "remember_me"=>"0"}
+  [4;35;1mUser Load (0.000374)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00145 (689 reqs/sec) | DB: 0.00068 (46%) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=0]
+  [4;36;1mSQL (0.000148)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000106)[0m   [0mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-09-27 18:55:47) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"[FILTERED]", "remember_me"=>"1"}
+  [4;36;1mUser Load (0.000393)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+  [4;35;1mUser Update with optimistic locking (0.000366)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:55:47', `lock_version` = 1, `remember_token` = '05178b923a3da8360b25d6b50298857a64dfe486', `updated_at` = '2008-09-27 23:55:47'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+Cookie set: auth_token=05178b923a3da8360b25d6b50298857a64dfe486; path=/; expires=Sat, 11 Oct 2008 23:55:47 GMT
+Redirected to http://test.host/
+Completed in 0.00518 (192 reqs/sec) | DB: 0.00101 (19%) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=1]
+  [4;36;1mSQL (0.000783)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000174)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000348)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000215)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-09-27 18:55:47) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"quire", "password"=>"[FILTERED]", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+  [4;36;1mUser Load (0.000898)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mSQL (0.000335)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;36;1mSQL (0.000154)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+  [4;35;1mUser Create (0.000247)[0m   [0mINSERT INTO `users` (`salt`, `updated_at`, `crypted_password`, `phone_number`, `remember_token_expires_at`, `lock_version`, `remember_token`, `first_name`, `login`, `last_name`, `email`, `created_at`) VALUES('8b0810222ff5ce19cad39cad1bb115ed2d8b7a3e', '2008-09-27 23:55:47', 'bc0d7e2e4febddb36964456c00a3e614dd96ef81', NULL, NULL, 0, NULL, NULL, 'quire', NULL, 'quire@example.com', '2008-09-27 23:55:47')[0m
+Redirected to http://test.host/
+Completed in 0.09362 (10 reqs/sec) | DB: 0.00315 (3%) | 302 Found [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;36;1mSQL (0.000249)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.001228)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000168)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000339)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000199)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-09-27 18:55:47) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"quire", "password"=>"[FILTERED]", "email"=>nil}, "action"=>"create", "controller"=>"users"}
+  [4;35;1mUser Load (0.000324)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;36;1mSQL (0.000321)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;35;1mSQL (0.000174)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email IS NULL) [0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_nav (0.00001)
+Rendered shared/_flash_messages (0.00004)
+Rendered shared/_sidebar (0.00001)
+Completed in 0.00880 (113 reqs/sec) | Rendering: 0.00462 (52%) | DB: 0.00300 (34%) | 200 OK [http://test.host/users?user%5Bemail%5D=&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;36;1mSQL (0.000279)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000107)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000101)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000263)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000142)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-09-27 18:55:47) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "login"=>nil, "password"=>"[FILTERED]", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+  [4;35;1mUser Load (0.000270)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;36;1mSQL (0.000208)[0m   [0;1mSELECT `login` FROM `users` WHERE (`users`.login IS NULL) [0m
+  [4;35;1mSQL (0.000153)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_nav (0.00001)
+Rendered shared/_flash_messages (0.00004)
+Rendered shared/_sidebar (0.00001)
+Completed in 0.00605 (165 reqs/sec) | Rendering: 0.00281 (46%) | DB: 0.00152 (25%) | 200 OK [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;36;1mSQL (0.000268)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000107)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000101)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000261)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000141)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-09-27 18:55:47) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"quire", "password"=>"[FILTERED]", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+  [4;35;1mUser Load (0.000255)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;36;1mSQL (0.000227)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;35;1mSQL (0.000137)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_nav (0.00001)
+Rendered shared/_flash_messages (0.00005)
+Rendered shared/_sidebar (0.00001)
+Completed in 0.00589 (169 reqs/sec) | Rendering: 0.00260 (44%) | DB: 0.00150 (25%) | 200 OK [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=]
+  [4;36;1mSQL (0.000258)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000112)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000090)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000317)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000340)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-09-27 18:55:47) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"quire", "password"=>"[FILTERED]", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+  [4;35;1mUser Load (0.000288)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;36;1mSQL (0.000298)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;35;1mSQL (0.000142)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_nav (0.00001)
+Rendered shared/_flash_messages (0.00004)
+Rendered shared/_sidebar (0.00001)
+Completed in 0.00649 (154 reqs/sec) | Rendering: 0.00282 (43%) | DB: 0.00184 (28%) | 200 OK [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=&user%5Bpassword_confirmation%5D=quire]
+  [4;36;1mSQL (0.000270)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000106)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000375)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000114)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000074)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000077)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000052)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000086)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000077)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000087)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000077)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000090)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000076)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000087)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000080)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000174)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000079)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000077)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000245)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000080)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000122)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000081)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000074)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000077)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000087)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000076)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000086)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000076)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000086)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000077)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000086)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Load (0.000319)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mUser Load (0.000321)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000438)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000193)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000202)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000233)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000173)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000190)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;35;1mItem Load (0.000211)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mSQL (0.000138)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000117)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000080)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000093)[0m   [0mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;36;1mUser Load (0.000294)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000263)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000193)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000115)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000102)[0m   [0;1mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;35;1mUser Load (0.000277)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000283)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000179)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000080)[0m   [0mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;36;1mUser Load (0.000315)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000258)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000178)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000110)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Load (0.000231)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mUser Load (0.000271)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000337)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000196)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000185)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000221)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000198)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000174)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;35;1mItem Load (0.000169)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mSQL (0.000113)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000103)[0m   [0mBEGIN[0m
+  [4;36;1mItem Load (0.000229)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mUser Load (0.000224)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000253)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000174)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000204)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000429)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000306)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000236)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;36;1mItem Load (0.000184)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mSQL (0.000134)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000210)[0m   [0;1mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;35;1mUser Load (0.000301)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000272)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000203)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000132)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000078)[0m   [0mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;36;1mUser Load (0.000303)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000306)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000256)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000134)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000103)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000116)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000083)[0m   [0;1mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;35;1mUser Load (0.000303)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000359)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000218)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000123)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000077)[0m   [0mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;36;1mUser Load (0.000281)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000253)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000177)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000121)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000084)[0m   [0;1mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;35;1mUser Load (0.000348)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000308)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000181)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000117)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000077)[0m   [0mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;36;1mUser Load (0.000401)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000364)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000192)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000120)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;35;1mSQL (0.000119)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000078)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000075)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000077)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000081)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Load (0.000267)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mUser Load (0.000270)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000316)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000183)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000187)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000207)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000171)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000174)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;35;1mItem Load (0.000169)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mSQL (0.000132)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000097)[0m   [0mBEGIN[0m
+  [4;36;1mItem Load (0.000245)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mItem Load (0.000156)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mItem Load (0.000152)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mUser Load (0.000185)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000282)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000176)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000179)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000233)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000224)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000175)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;36;1mItem Load (0.000169)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mItem Update with optimistic locking (0.000311)[0m   [0m UPDATE `items`
+ SET `extra_fields` = NULL, `lock_version` = 1, `updated_at` = '2008-09-27 23:58:28', `name` = 'Some arbitrary string which is unlikely to ever be the name of a fixture'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;36;1mUser Load (0.000263)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000267)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000178)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000181)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000208)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000173)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000177)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;35;1mItem Load (0.000170)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mItem Update with optimistic locking (0.000313)[0m   [0;1m UPDATE `items`
+ SET `extra_fields` = NULL, `lock_version` = 1, `updated_at` = '2008-09-27 23:58:28', `name` = 'Some other arbitrary string which is unlikely to ever be the name of a fixture'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;35;1mSQL (0.001350)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000123)[0m   [0;1mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, requester_id
+  [4;35;1mUser Load (0.000297)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.000125)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000109)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000097)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000079)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000076)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000092)[0m   [0mBEGIN[0m
+  [4;36;1mItem Load (0.000255)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mUser Load (0.000219)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000266)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000180)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000207)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000223)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000199)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000241)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;36;1mItem Load (0.000193)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mSQL (0.000122)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Load (0.000254)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mUser Load (0.000220)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000260)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000177)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000223)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000451)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000210)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000214)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;35;1mItem Load (0.000189)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mSQL (0.000124)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000100)[0m   [0mBEGIN[0m
+  [4;36;1mItem Load (0.000246)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mUser Load (0.000201)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000284)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000182)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000184)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000237)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000185)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000171)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;36;1mItem Load (0.000173)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;35;1mSQL (0.000131)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Load (0.000247)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mUser Load (0.000191)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000277)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000188)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000183)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000221)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000199)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Load (0.000177)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;35;1mItem Load (0.000172)[0m   [0mSELECT * FROM `items` WHERE (`items`.`id` = 1) [0m
+  [4;36;1mSQL (0.000117)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000102)[0m   [0mBEGIN[0m
+WARNING: Can't mass-assign these protected attributes: lock_version, fixer_id, requester_id
+  [4;36;1mUser Load (0.000304)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000272)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000200)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000122)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000096)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000077)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000096)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Columns (0.002806)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mItem Load (0.000369)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 3) [0m
+  [4;35;1mPost Create (0.000702)[0m   [0mINSERT INTO `posts` (`item_id`, `updated_at`, `emailed_to`, `type`, `content`, `user_id`, `emailed_cc`, `created_at`) VALUES(3, '2008-09-27 23:58:28', NULL, NULL, '<p>Il parlar auxiliar ascoltar uso, ille addresses del in, tu pro nomina latente anteriormente. Sitos conferentias non da. Es uno prime deler linguistas, da sine personas auxiliar uno, laborava summarios nos un. In spatios medical publicate per, pan su anque auxiliary anteriormente. In pan proposito sanctificate, duo moderne ascoltar secundarimente un. Qui libere denomination in.\n<br /> Titulo giuseppe primarimente ma uso, libro continentes via se. Inviar nostre linguas de via. Es ille brevissime methodicamente sed, sia un quales romanic paternoster. De per medio africa tamben.</p>', 1, NULL, '2008-09-27 23:58:28')[0m
+  [4;36;1mUser Load (0.000343)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000454)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000283)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Load (0.000259)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 'dummy_user') LIMIT 1[0m
+  [4;36;1mItem Load (0.000198)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`id` = 3) [0m
+  [4;35;1mItem Update with optimistic locking (0.000276)[0m   [0m UPDATE `items`
+ SET `extra_fields` = NULL, `lock_version` = 1, `updated_at` = '2008-09-27 23:58:28'
+ WHERE id = 3
+ AND `lock_version` = 0
+[0m
+  [4;36;1mSQL (0.001139)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000181)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000338)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Load (0.000272)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+  [4;36;1mSQL (0.000151)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000122)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000235)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000420)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;36;1mSQL (0.000199)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+  [4;35;1mUser Create (0.000301)[0m   [0mINSERT INTO `users` (`salt`, `updated_at`, `crypted_password`, `phone_number`, `remember_token_expires_at`, `lock_version`, `remember_token`, `first_name`, `login`, `last_name`, `email`, `created_at`) VALUES('1569e7de67ad90995778ee7d73450eb80f5aac1f', '2008-09-27 23:58:28', '8e597da38586d2072269af3a24c2d6c8048bab17', NULL, NULL, 0, NULL, NULL, 'quire', NULL, 'quire@example.com', '2008-09-27 23:58:28')[0m
+  [4;36;1mSQL (0.000188)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000662)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000163)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000420)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000407)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin2' AND `users`.id <> 1) [0m
+  [4;35;1mSQL (0.000293)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;36;1mUser Update with optimistic locking (0.000363)[0m   [0;1m UPDATE `users`
+ SET `login` = 'quentin2', `lock_version` = 1, `updated_at` = '2008-09-27 23:58:28'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;35;1mUser Load (0.000278)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin2') LIMIT 1[0m
+  [4;36;1mSQL (0.000664)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000127)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000318)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Update with optimistic locking (0.000360)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:58:28', `lock_version` = 1, `remember_token` = '3bfa7c1607323f3a041d6118cbb346adccb1be2f', `updated_at` = '2008-09-27 23:58:28'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;36;1mSQL (0.000682)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000084)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000291)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Update with optimistic locking (0.000316)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-04 23:58:28', `lock_version` = 1, `remember_token` = '33a0335e31e4e5440f772395d135453497d6f7cd', `updated_at` = '2008-09-27 23:58:28'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;36;1mSQL (0.000767)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000161)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000340)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Update with optimistic locking (0.000346)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-04 23:58:28', `lock_version` = 1, `remember_token` = '33a0335e31e4e5440f772395d135453497d6f7cd', `updated_at` = '2008-09-27 23:58:28'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;36;1mSQL (0.000668)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000084)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000215)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000323)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;36;1mSQL (0.000206)[0m   [0;1mSELECT `email` FROM `users` WHERE (`users`.email IS NULL) [0m
+  [4;35;1mSQL (0.000167)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+  [4;36;1mSQL (0.000103)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000103)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000173)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000223)[0m   [0mSELECT `login` FROM `users` WHERE (`users`.login IS NULL) [0m
+  [4;36;1mSQL (0.000160)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000157)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+  [4;36;1mSQL (0.000102)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000093)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000157)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000221)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;36;1mSQL (0.000139)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000137)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+  [4;36;1mSQL (0.000101)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000075)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000156)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000218)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;36;1mSQL (0.000137)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000153)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+  [4;36;1mSQL (0.000100)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000079)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000234)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000265)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quentin' AND `users`.id <> 1) [0m
+  [4;36;1mSQL (0.000183)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quentin@example.com' AND `users`.id <> 1) [0m
+  [4;35;1mUser Update with optimistic locking (0.000245)[0m   [0m UPDATE `users`
+ SET `crypted_password` = '4b6dd603c64f03bc2f676658e287094878df9603', `lock_version` = 1, `updated_at` = '2008-09-27 23:58:28'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;36;1mUser Load (0.000277)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+  [4;35;1mSQL (0.000734)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000095)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000258)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Update with optimistic locking (0.000355)[0m   [0;1m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:58:28', `lock_version` = 1, `remember_token` = '3bfa7c1607323f3a041d6118cbb346adccb1be2f', `updated_at` = '2008-09-27 23:58:28'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;35;1mSQL (0.001082)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000164)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000337)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Update with optimistic locking (0.000464)[0m   [0;1m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:58:28', `lock_version` = 1, `remember_token` = '3bfa7c1607323f3a041d6118cbb346adccb1be2f', `updated_at` = '2008-09-27 23:58:28'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;35;1mUser Update with optimistic locking (0.000475)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = NULL, `lock_version` = 2, `remember_token` = NULL, `updated_at` = '2008-09-27 23:58:28'
+ WHERE id = 1
+ AND `lock_version` = 1
+[0m
+  [4;36;1mSQL (0.000929)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000395)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000111)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000106)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000312)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2008-09-27 18:58:31) [GET]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+  [4;36;1mUser Load (0.000389)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://test.host/
+Completed in 0.01163 (85 reqs/sec) | DB: 0.01494 (128%) | 302 Found [http://test.host/logout]
+  [4;35;1mSQL (0.000209)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000081)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000356)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Update with optimistic locking (0.000342)[0m   [0;1m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:58:31', `lock_version` = 1, `remember_token` = '265ed030be2453538674d42dba5ac129bb98baf1', `updated_at` = '2008-09-27 23:58:31'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2008-09-27 18:58:31) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+  [4;35;1mUser Load (0.000295)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = 'invalid_auth_token') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_nav (0.00001)
+Rendered shared/_flash_messages (0.00004)
+Rendered shared/_sidebar (0.00001)
+Completed in 0.00755 (132 reqs/sec) | Rendering: 0.00648 (85%) | DB: 0.00128 (16%) | 200 OK [http://test.host/login]
+  [4;36;1mUser Load (0.000338)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = 'invalid_auth_token') LIMIT 1[0m
+  [4;35;1mSQL (0.026686)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000188)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000371)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Update with optimistic locking (0.000386)[0m   [0;1m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:58:31', `lock_version` = 1, `remember_token` = '265ed030be2453538674d42dba5ac129bb98baf1', `updated_at` = '2008-09-27 23:58:31'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+  [4;35;1mUser Update with optimistic locking (0.000415)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-09-27 23:53:31', `lock_version` = 2, `updated_at` = '2008-09-27 23:58:31'
+ WHERE id = 1
+ AND `lock_version` = 1
+[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2008-09-27 18:58:31) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+  [4;36;1mUser Load (0.000407)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = '265ed030be2453538674d42dba5ac129bb98baf1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_nav (0.00001)
+Rendered shared/_flash_messages (0.00004)
+Rendered shared/_sidebar (0.00001)
+Completed in 0.00335 (298 reqs/sec) | Rendering: 0.00179 (53%) | DB: 0.02879 (858%) | 200 OK [http://test.host/login]
+  [4;35;1mUser Load (0.000297)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = '265ed030be2453538674d42dba5ac129bb98baf1') LIMIT 1[0m
+  [4;36;1mSQL (0.000704)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000085)[0m   [0mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-09-27 18:58:31) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (0.000377)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_nav (0.00001)
+Rendered shared/_flash_messages (0.00004)
+Rendered shared/_sidebar (0.00001)
+Completed in 0.00313 (319 reqs/sec) | Rendering: 0.00189 (60%) | DB: 0.00146 (46%) | 200 OK [http://test.host/session?login=quentin&password=bad+password]
+  [4;35;1mSQL (0.000162)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000080)[0m   [0;1mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-09-27 18:58:31) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"[FILTERED]"}
+  [4;35;1mUser Load (0.000294)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00108 (926 reqs/sec) | DB: 0.00054 (49%) | 302 Found [http://test.host/session?login=quentin&password=test]
+  [4;36;1mSQL (0.000119)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000080)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000246)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Update with optimistic locking (0.000304)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:58:31', `lock_version` = 1, `remember_token` = '265ed030be2453538674d42dba5ac129bb98baf1', `updated_at` = '2008-09-27 23:58:31'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2008-09-27 18:58:31) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+  [4;36;1mUser Load (0.000265)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = '265ed030be2453538674d42dba5ac129bb98baf1') LIMIT 1[0m
+Cookie set: auth_token=265ed030be2453538674d42dba5ac129bb98baf1; path=/; expires=Sat, 11 Oct 2008 23:58:31 GMT
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_nav (0.00001)
+Rendered shared/_flash_messages (0.00004)
+Rendered shared/_sidebar (0.00001)
+Completed in 0.00308 (324 reqs/sec) | Rendering: 0.00184 (59%) | DB: 0.00101 (32%) | 200 OK [http://test.host/login]
+  [4;35;1mSQL (0.000761)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000165)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000386)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2008-09-27 18:58:31) [GET]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+  [4;36;1mUser Load (0.000371)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://test.host/
+Completed in 0.00339 (295 reqs/sec) | DB: 0.00168 (49%) | 302 Found [http://test.host/logout]
+  [4;35;1mSQL (0.000220)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-09-27 18:58:31) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"[FILTERED]", "remember_me"=>"0"}
+  [4;35;1mUser Load (0.000441)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00164 (610 reqs/sec) | DB: 0.00077 (46%) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=0]
+  [4;36;1mSQL (0.000171)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000105)[0m   [0mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-09-27 18:58:31) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"[FILTERED]", "remember_me"=>"1"}
+  [4;36;1mUser Load (0.000345)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'quentin') LIMIT 1[0m
+  [4;35;1mUser Update with optimistic locking (0.000397)[0m   [0m UPDATE `users`
+ SET `remember_token_expires_at` = '2008-10-11 23:58:31', `lock_version` = 1, `remember_token` = '265ed030be2453538674d42dba5ac129bb98baf1', `updated_at` = '2008-09-27 23:58:31'
+ WHERE id = 1
+ AND `lock_version` = 0
+[0m
+Cookie set: auth_token=265ed030be2453538674d42dba5ac129bb98baf1; path=/; expires=Sat, 11 Oct 2008 23:58:31 GMT
+Redirected to http://test.host/
+Completed in 0.00527 (189 reqs/sec) | DB: 0.00102 (19%) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=1]
+  [4;36;1mSQL (0.000780)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000135)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000275)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.000150)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-09-27 18:58:31) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"quire", "password"=>"[FILTERED]", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+  [4;36;1mUser Load (0.000341)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mSQL (0.000337)[0m   [0mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;36;1mSQL (0.000147)[0m   [0;1mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+  [4;35;1mUser Create (0.000275)[0m   [0mINSERT INTO `users` (`salt`, `updated_at`, `crypted_password`, `phone_number`, `remember_token_expires_at`, `lock_version`, `remember_token`, `first_name`, `login`, `last_name`, `email`, `created_at`) VALUES('0d215d1877ef9f992c27ea5f484b671244a737be', '2008-09-27 23:58:31', '9982af2c149fe6e0fdac7bcf172bc8210b300fab', NULL, NULL, 0, NULL, NULL, 'quire', NULL, 'quire@example.com', '2008-09-27 23:58:31')[0m
+Redirected to http://test.host/
+Completed in 0.09009 (11 reqs/sec) | DB: 0.00244 (2%) | 302 Found [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;36;1mSQL (0.000232)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000795)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000169)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000337)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000196)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-09-27 18:58:31) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"quire", "password"=>"[FILTERED]", "email"=>nil}, "action"=>"create", "controller"=>"users"}
+  [4;35;1mUser Load (0.000295)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;36;1mSQL (0.000271)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;35;1mSQL (0.000166)[0m   [0mSELECT `email` FROM `users` WHERE (`users`.email IS NULL) [0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_nav (0.00001)
+Rendered shared/_flash_messages (0.00004)
+Rendered shared/_sidebar (0.00001)
+Completed in 0.00869 (115 reqs/sec) | Rendering: 0.00452 (52%) | DB: 0.00246 (28%) | 200 OK [http://test.host/users?user%5Bemail%5D=&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;36;1mSQL (0.000280)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000105)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000245)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000139)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-09-27 18:58:31) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "login"=>nil, "password"=>"[FILTERED]", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+  [4;35;1mUser Load (0.000236)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;36;1mSQL (0.000211)[0m   [0;1mSELECT `login` FROM `users` WHERE (`users`.login IS NULL) [0m
+  [4;35;1mSQL (0.000146)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_nav (0.00001)
+Rendered shared/_flash_messages (0.00004)
+Rendered shared/_sidebar (0.00001)
+Completed in 0.00598 (167 reqs/sec) | Rendering: 0.00280 (46%) | DB: 0.00144 (24%) | 200 OK [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;36;1mSQL (0.000267)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000106)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000080)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000301)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000141)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-09-27 18:58:31) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"quire", "password"=>"[FILTERED]", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+  [4;35;1mUser Load (0.000242)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;36;1mSQL (0.000217)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;35;1mSQL (0.000130)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_nav (0.00001)
+Rendered shared/_flash_messages (0.00004)
+Rendered shared/_sidebar (0.00001)
+Completed in 0.00595 (168 reqs/sec) | Rendering: 0.00267 (44%) | DB: 0.00148 (24%) | 200 OK [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=]
+  [4;36;1mSQL (0.000255)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000126)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000095)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.000313)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.000361)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-09-27 18:58:31) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "login"=>"quire", "password"=>"[FILTERED]", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+  [4;35;1mUser Load (0.000300)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;36;1mSQL (0.000254)[0m   [0;1mSELECT `login` FROM `users` WHERE (LOWER(`users`.login) = 'quire') [0m
+  [4;35;1mSQL (0.000149)[0m   [0mSELECT `email` FROM `users` WHERE (LOWER(`users`.email) = 'quire@example.com') [0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_nav (0.00001)
+Rendered shared/_flash_messages (0.00005)
+Rendered shared/_sidebar (0.00001)
+Completed in 0.00669 (149 reqs/sec) | Rendering: 0.00318 (47%) | DB: 0.00185 (27%) | 200 OK [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=&user%5Bpassword_confirmation%5D=quire]
+  [4;36;1mSQL (0.000282)[0m   [0;1mSELECT count(*) AS count_all FROM `users` [0m
+  [4;35;1mSQL (0.000107)[0m   [0mROLLBACK[0m
